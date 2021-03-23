@@ -40,9 +40,9 @@ List * createList() {
 
 void * firstList(List * list) {
   
-  if(list->head->prev==NULL){
+  
     list->head->prev =list->current;
-  }
+  
   
   
 
