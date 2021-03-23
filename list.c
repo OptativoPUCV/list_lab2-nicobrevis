@@ -39,7 +39,7 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-  
+  list->current->prev = list->head;
    
   
   return list->head;
@@ -62,7 +62,7 @@ void * prevList(List * list) {
 void pushFront(List * list, const void * data) {
   Node* n = createNode(data);
   n->next = list->head;
-  if(list->head && list->head != list->tail){
+  if(list->head){
     list->head->prev = n;
   }
   list->head =n;
