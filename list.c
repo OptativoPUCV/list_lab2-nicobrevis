@@ -50,7 +50,7 @@ void * firstList(List * list) {
 
 
    
-    return list->head;
+    return n;
 }
 
 void * nextList(List * list) {
