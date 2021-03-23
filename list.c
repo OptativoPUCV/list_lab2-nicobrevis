@@ -39,14 +39,14 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-  List * L = (List *)malloc(sizeof(List));
-  L->current = L->head;
+  
+  list->current->data = list->head;
 
   
 
    
   
-  return L->head;
+  return list->head;
 }
 
 void * nextList(List * list) {
@@ -71,7 +71,7 @@ void pushFront(List * list, const void * data) {
   }
   list->head =n;
   n->prev =NULL;
-  list->tail++;
+  
 }
 
 void pushBack(List * list, const void * data) {
