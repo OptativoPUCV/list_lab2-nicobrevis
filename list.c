@@ -39,12 +39,14 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-  list->current = list->head;
-  list->current->prev =NULL;
+  List * L = (List *)malloc(sizeof(List));
+  L->current = L->head;
+
+  
 
    
   
-  return list->current;
+  return list->head;
 }
 
 void * nextList(List * list) {
