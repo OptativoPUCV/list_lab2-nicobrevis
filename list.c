@@ -40,22 +40,15 @@ List * createList() {
 
 void * firstList(List * list) {
   
+  list->head->prev =list->current;
   
-    list->head->prev =list->current;
-  
-  
-  
-
-
-   
-    return list->head;
+  return list->head;
 }
 
 void * nextList(List * list) {
-   Node * L = (Node *)malloc(sizeof(Node));
-  L->next = list->current;
+   
 
-    return list -> current -> next;
+    return NULL;
 }
 
 void * lastList(List * list) {
