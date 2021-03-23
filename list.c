@@ -41,7 +41,7 @@ List * createList() {
 void * firstList(List * list) {
   List * L = (List *)malloc(sizeof(List));
    L->head = L->current;
-    return L->current;
+    return L->head;
 }
 
 void * nextList(List * list) {
