@@ -39,12 +39,12 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-    list->head=list->current;
+  list->current = list->head;
   list->current->prev =NULL;
 
    
   
-  return list->head;
+  return list->current;
 }
 
 void * nextList(List * list) {
