@@ -48,6 +48,9 @@ void * nextList(List * list) {
   if(list->current->next){
     list->current = list->current->next;
   }
+  else{
+    return NULL;
+  }
   
   
   return (void*)list->current->data;
