@@ -50,7 +50,7 @@ void * nextList(List * list) {
   }
   
   
-  return (void*)list->current->data;
+  return NULL;
     
 }
 
