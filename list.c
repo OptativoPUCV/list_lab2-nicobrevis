@@ -51,6 +51,9 @@ void * nextList(List * list) {
   else{
     return NULL;
   }
+  if(list->current == NULL){
+    return NULL;
+  }
   
   
   return (void*)list->current->data;
