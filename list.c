@@ -39,15 +39,14 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-  if(list->head || list->current == NULL) return NULL;
+  if(list->head ==NULL) return NULL; // current no va, ya que da lo mismo, si desde aca vas a actualizar el current
   list->current = list->head;
   return (void*)list->current->data;
 }
 
 void * nextList(List * list) {
-  
- 
-  if(list->current || list->current->next == NULL){
+  if(list->current == NULL || list->current->next == NULL){
+    
     return NULL;
   } 
   list->current = list->current->next;
