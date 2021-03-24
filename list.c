@@ -53,7 +53,7 @@ void * nextList(List * list) {
   }
   
   
-  return (void*)list->current->data;
+  return list->current->next;
     
 }
 
