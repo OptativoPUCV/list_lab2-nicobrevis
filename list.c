@@ -46,9 +46,8 @@ void * firstList(List * list) {
 
 void * nextList(List * list) {
   
-   list->current = list->current->next;
-  
-    return (void*)list->current->next->data;
+  list->current = list->current->next;
+  return (void*)list->current->next->data;
     
 }
 
@@ -68,7 +67,7 @@ void pushFront(List * list, const void * data) {
   }
   list->head =n;
   n->prev =NULL;
-  
+  list->tail++;
 }
 
 void pushBack(List * list, const void * data) {
