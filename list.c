@@ -40,12 +40,13 @@ List * createList() {
 
 void * firstList(List * list) {
   
+  
   list->current = list->head;
- 
+  
 
    
   
-  return (int*)list->head;
+  return (void*)list->current->data;
 }
 
 void * nextList(List * list) {
