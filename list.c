@@ -45,10 +45,10 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-  void * n = list->current->next;
+  void *n = list->current->next;
    list->current = n;
-   
-    return (void*)list->current->data;
+  
+    return (void*)list->current->next->data;
 }
 
 void * lastList(List * list) {
