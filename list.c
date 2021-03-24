@@ -80,6 +80,7 @@ void pushFront(List * list, const void * data) {
   if(list->head){
     n->next = list->head;
     list->head->prev = n;
+    list->tail =NULL;
   }
   list->head =n;
   n->prev =NULL;
