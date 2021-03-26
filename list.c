@@ -101,6 +101,9 @@ void pushCurrent(List * list, const void * data) {
   if(list->head==NULL){
     list->tail = n;
   }
+  if(list->current == list->head){
+    list->head->prev = n;
+  }
   if(list->head){
     list->current->next = n;
   }
