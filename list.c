@@ -102,7 +102,8 @@ void pushCurrent(List * list, const void * data) {
     list->tail = n;
   }
   if(list->current == list->head){
-    list->head->prev = n;
+    pushFront(list,data);
+
   }
   if(list->head){
     list->current->next = n;
