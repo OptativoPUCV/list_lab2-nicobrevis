@@ -123,7 +123,7 @@ void * popCurrent(List * list) {
   Node* n = list->current;
   if(list->current == list->head){
     
-    list->current->next = list->head;
+    list->head = list->current->next;
     list->head->prev = NULL;
     
     
