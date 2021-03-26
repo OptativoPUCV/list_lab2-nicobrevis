@@ -107,14 +107,14 @@ void pushCurrent(List * list, const void * data) {
   if(list->head){
     list->current->next = n;
   }
-  if(list->head==NULL){
+  if(list->tail==NULL){
     list->tail = n;
     
   }
   list->current = n;
   
   n->prev = list->head; 
-n->prev = list->tail;
+
 }
 
 void * popFront(List * list) {
