@@ -97,25 +97,15 @@ void pushBack(List * list, const void * data) {
 
 void pushCurrent(List * list, const void * data) {
   Node* n =createNode(data);
-  n->prev = list->current;
-  
-  if(list->current == list->head){
-    list->head->next = n;
-    
-  }
-  
-  if(list->head){
-    list->current->next = n;
-  }
 
   if(list->current == list->tail){
-    list->tail->prev = n;
-    
+    list->tail = n;
+    n->prev = list->current;
   }
 
-  list->current = n;
+  
   list->tail = n;
-  n->prev = list->head; 
+  
   
 }
 
