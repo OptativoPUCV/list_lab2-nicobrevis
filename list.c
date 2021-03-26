@@ -114,7 +114,7 @@ void pushCurrent(List * list, const void * data) {
   }
 
   list->current = n;
-  n->next = list->tail;
+  n->prev = list->tail;
   n->prev = list->head; 
   
 }
