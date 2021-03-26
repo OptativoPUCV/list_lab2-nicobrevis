@@ -79,12 +79,12 @@ void pushFront(List * list, const void * data) {
   }
   if(list->head){
     list->head->prev = n;
-    list->current = list->head;
+    
   }
     
   
    list->head = n;
-   list->head->next = list->current;
+   
 }
 
 void pushBack(List * list, const void * data) {
