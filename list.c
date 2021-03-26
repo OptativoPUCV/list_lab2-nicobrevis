@@ -110,7 +110,7 @@ void pushCurrent(List * list, const void * data) {
 
   if(list->current == list->tail){
     list->tail->prev = n;
-    
+    n->next = list->tail;
   }
 
   list->current = n;
