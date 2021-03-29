@@ -130,14 +130,14 @@ void * popCurrent(List * list) {
       list->current = list->head; // asi? sisi ya esta lista esta primera parte
    
     }
-    if(list->current->prev != NULL && list->current->next !=NULL){ //creo que acá es donde me tira el error
+    else if(list->current->prev != NULL && list->current->next !=NULL){
 
-      aux->prev = aux->next; //esto esta bien
-      aux->next->prev = aux->prev;    // asi el siguiente apunta hacia atras | entonces qué significa la linea list->current->next->next? puede haber un list->current->next->next->next->prev?? sipii de esa forma funciona el next, miralo, pero sin el prev
+      aux->prev = aux->next; 
+      aux->next->prev = aux->prev;    // asi el siguiente apunta hacia atras | entonces qué significa la linea list->current->next->next? puede haber un list->current->next->next->next->prev?? sipii de esa forma funciona el next, miralo, pero sin el prev. Todo bien hasta aca? wait ya ya
     
     }
 
-    if(list->current == list->tail){
+    else if(list->current == list->tail){
      list->tail = list->current->prev;
      list->tail->prev->next = NULL;
      list->current =NULL;
