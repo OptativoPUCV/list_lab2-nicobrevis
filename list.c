@@ -123,17 +123,17 @@ void * popCurrent(List * list) {
   Node * aux = list->current; 
   if(list->head && list->tail){
     
-    if(list->current->prev == NULL){
+    if(list->current == list->head){ // aca tambien hubieras dicho current == head-antes lo tenía así pero da lo mismo o no? sipii
       
       list->head = aux->next;
       aux->next->prev = NULL;
-      list->current = list->head; // aca faltaria actualizar el current nomas
+      list->current = list->head; // asi? sisi ya esta lista esta primera parte
    
     }
-    if(list->current->prev != NULL && list->current->next !=NULL){
+    if(list->current->prev != NULL && list->current->next !=NULL){ //creo que acá es donde me tira el error
 
       aux->prev = aux->next;
-      list->current = list->current->next;
+     list->current->next = list->current->prev; // e
     
     }
 
