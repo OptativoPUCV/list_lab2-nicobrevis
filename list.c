@@ -127,7 +127,7 @@ void * popCurrent(List * list) {
       
       list->head = aux->next;
       aux->next->prev = NULL;
-      aux = list->head;
+      aux = list->head->next; // pq haces esto? pq dice queel current retorna la nodo siguiente del eliminado
    
     }
     if(list->current->prev != NULL && list->current->next !=NULL){
