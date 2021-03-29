@@ -133,7 +133,8 @@ void * popCurrent(List * list) {
     if(list->current->prev != NULL && list->current->next !=NULL){ //creo que acá es donde me tira el error
 
       aux->prev = aux->next; //aca haces eso 
-      aux->next = aux->prev; //entonces depués de eso tengo que decir que el current->prev apunte al current->next? alreves pq eso lo tienes, el current next tiene que apuntar al prev
+      aux->next = aux->prev;
+      free(aux); //entonces depués de eso tengo que decir que el current->prev apunte al current->next? alreves pq eso lo tienes, el current next tiene que apuntar al prev, ahora estas actualizando el current sieguiente, de que forma el next apunta al current? el next no está apuntando al current , todavia lo apunta | en el aux??, pq el aux = list->current
     
     }
 
