@@ -120,7 +120,7 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-  void * dato = ( void*)list->current->data; // ya se que tira error
+  void * dato = ( void*)list->current->data; // no entiendo bien esta parte, es para guardar el dato, ya que si le hacemos un free antes, tiraria error, por eso se caia antes, pq liberamos memoria y despues tratabamos de hacer NULL->dato
   Node * aux = list->current;
   if(list->head && list->tail){
     
@@ -129,24 +129,24 @@ void * popCurrent(List * list) {
       list->head = aux->next;
       aux->next->prev = NULL;
       list->current = list->head; 
-      free(list->current);
+      
    
     }
     else if(list->current->prev != NULL && list->current->next !=NULL){
 
       aux->prev->next = aux->next; 
       aux->next->prev = aux->prev;  
-    free(list->current);
+    
     }
 
     else if(list->current == list->tail){
      list->tail = list->current->prev;
      list->tail->next = NULL;
-     free(list->current);
+     
     }
     
   }
-  
+  //free(list->current);
    // pucha sigue tirando ese error
   return dato;
 }
