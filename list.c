@@ -127,8 +127,7 @@ void * popCurrent(List * list) {
       
       list->head = aux->next;
       aux->next->prev = NULL;
-      list->current = list->head;
-      //list->current = list->head; 
+      list->current = list->head; 
    
     }
     else if(list->current->prev != NULL && list->current->next !=NULL){
@@ -141,13 +140,12 @@ void * popCurrent(List * list) {
     else if(list->current == list->tail){
      list->tail = list->current->prev;
      list->tail->next = NULL;
-     
     }
 
   }
-  free(list->current); // chan,nos falto liberar memoria en otra parte
-  return (void*) aux->data; 
-    
+  
+  //free(list->current); // que paso? había un punto en el que el programa corría y quería volver ahí y ver donde liberar la memoria
+  return (void*) aux->data;
 }
 
 void cleanList(List * list) {
