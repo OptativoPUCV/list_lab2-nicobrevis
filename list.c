@@ -133,7 +133,7 @@ void * popCurrent(List * list) {
     if(list->current->prev != NULL && list->current->next !=NULL){ //creo que acá es donde me tira el error
 
       aux->prev = aux->next;
-     list->current->next = list->current->prev; // e
+     list->current->next->prev = list->current->prev; //
     
     }
 
