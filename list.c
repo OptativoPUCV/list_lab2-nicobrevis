@@ -120,7 +120,8 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-  Node * aux = list->current; 
+  void * dato = ( void*)list->current->data; // ya se que tira error
+  Node * aux = list->current;
   if(list->head && list->tail){
     
     if(list->current == list->head){ 
@@ -128,6 +129,7 @@ void * popCurrent(List * list) {
       list->head = aux->next;
       aux->next->prev = NULL;
       list->current = list->head; 
+      
    
     }
     else if(list->current->prev != NULL && list->current->next !=NULL){
@@ -144,8 +146,8 @@ void * popCurrent(List * list) {
     
   }
   
-  // free(list->current);// es necesario usar un aux? en realidad solo del dato
-  return (void*) aux->data;
+   free(list->current);// es necesario usar un aux? en realidad solo del dato
+  return dato;
 }
 
 void cleanList(List * list) {
