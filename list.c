@@ -141,10 +141,10 @@ void * popCurrent(List * list) {
      list->tail = list->current->prev;
      list->tail->next = NULL;
     }
-    free(aux);
+    
   }
   
-  // // es necesario usar un aux? en realidad solo del dato
+  // free(list->current);// es necesario usar un aux? en realidad solo del dato
   return (void*) aux->data;
 }
 
