@@ -144,7 +144,7 @@ void * popCurrent(List * list) {
     }
 
   }
-  free(list->current);
+  free(aux); // aux
   // aca pq en todos los casos se tiene que liberar la memoria
   return (void*) aux->data; 
     
