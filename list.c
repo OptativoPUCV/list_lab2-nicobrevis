@@ -120,14 +120,14 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-  
+  Node * aux = list->current; 
   if(list->head && list->tail){
-    Node * aux = list->current; 
+    
     if(list->current->prev == NULL){
       
       list->head = aux->next;
       aux->next->prev = NULL;
-      aux = list->head->next; // pq haces esto? pq dice queel current retorna la nodo siguiente del eliminado
+      aux = list->head; // 
    
     }
     if(list->current->prev != NULL && list->current->next !=NULL){
@@ -145,7 +145,7 @@ void * popCurrent(List * list) {
 
   }
 
-  return (void*)list->current->data;
+  return (void*) aux->data; 
     
 }
 
