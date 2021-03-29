@@ -141,10 +141,10 @@ void * popCurrent(List * list) {
      list->tail = list->current->prev;
      list->tail->next = NULL;
     }
-
+    free(list->current);
   }
   
-  //free(list->current); // que paso? había un punto en el que el programa corría y quería volver ahí y ver donde liberar la memoria
+  // // es necesario usar un aux?
   return (void*) aux->data;
 }
 
