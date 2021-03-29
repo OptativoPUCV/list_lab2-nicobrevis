@@ -123,27 +123,28 @@ void * popCurrent(List * list) {
   Node * aux = list->current; 
   if(list->head && list->tail){
     
-    if(list->current == list->head){ // aca tambien hubieras dicho current == head-antes lo tenía así pero da lo mismo o no? sipii
+    if(list->current == list->head){ 
       
       list->head = aux->next;
       aux->next->prev = NULL;
-      list->current = list->head; // asi? sisi ya esta lista esta primera parte
+      list->current = list->head; 
    
     }
     else if(list->current->prev != NULL && list->current->next !=NULL){
 
-      aux->prev->next = aux->next; // aca falto apuntar al next, ahi mismo OMG
-      aux->next->prev = aux->prev;    // asi el siguiente apunta hacia atras | entonces qué significa la linea list->current->next->next? puede haber un list->current->next->next->next->prev?? sipii de esa forma funciona el next, miralo, pero sin el prev. Todo bien hasta aca? wait ya ya
+      aux->prev->next = aux->next; 
+      aux->next->prev = aux->prev;  
     
     }
 
     else if(list->current == list->tail){
      list->tail = list->current->prev;
      list->tail->next = NULL;
-     free(list->current); // esto sacalo y haz un free antes de retornar, solo fata esto, liberar memoria es super importante
+      // esto sacalo y haz un free antes de retornar, solo fata esto, liberar memoria es super importante
     }
 
   }
+  free(list->current);
   // aca pq en todos los casos se tiene que liberar la memoria
   return (void*) aux->data; 
     
