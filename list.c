@@ -127,7 +127,7 @@ void * popCurrent(List * list) {
       
       list->head = aux->next;
       aux->next->prev = NULL;
-      aux = list->head; // 
+      list->current = list->head; // aca faltaria actualizar el current nomas
    
     }
     if(list->current->prev != NULL && list->current->next !=NULL){
